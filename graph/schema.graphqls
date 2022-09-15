@@ -1,0 +1,20 @@
+type Animals {
+  _id: String! #makes it requires
+  name: String!
+  age: Int!
+}
+
+# get results
+type Query {
+  SingleAnimal(_id: String!): Animals!
+  AllAnimals: [Animals!]!
+}
+
+input NewAnimal{
+  name: String!
+  age: Int!
+}
+
+type Mutation {
+  createAnimal(input: NewAnimal): Animals!
+}
